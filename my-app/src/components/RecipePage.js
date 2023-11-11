@@ -8,7 +8,7 @@ import axios from 'axios';
     img: str??,
     times: {
         prep: int,
-        cook: int,
+        cook: int
     },
     ingredientsList: {
         hasMultipleSubFoods: bool,
@@ -19,7 +19,7 @@ import axios from 'axios';
             }
         ]
     },
-    directionsList: [strings],
+    directionsList: [strings]
 }
 */
 
@@ -59,6 +59,22 @@ array of strings */}
             }
         ]
     } */}
+            {props.pageData.ingredientsList["subFoods"].map((subFood, i) => (
+                <React.Fragment key={"subfood" + i}>
+                    {props.pageData.ingredientsList.hasMultipleSubFoods && 
+                    <h3 className="subfood-name">{subFood.name}</h3>}
+                    {subFood.ingredients.map((ingredientStr, i) => (
+                        <ul key={"ingredient" + i} className="ingredient">{ingredientStr}</ul>
+                    ))}
+                </React.Fragment>
+            ))}
+            <h2 id="directions-heading">Directions</h2>
+            {props.pageData.directionsList.map((direction, i) => (
+                <React.Fragment key={"direction" + i}>
+                    <b>Step {i + 1}</b>
+                    <p>{direction}</p>
+                </React.Fragment>
+            ))}
             <div>
             <h2 id="nutrition-heading">Nutrition Facts <span id="per-serving">(per serving)</span></h2>
             <button onClick={handleIngredientRequest}>hheloo</button>
