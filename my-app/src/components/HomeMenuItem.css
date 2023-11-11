@@ -1,0 +1,39 @@
+.menuitem {
+    width: 200px;
+    height: 200px;
+    /* background-color: red; */
+    margin: 20px;
+}
+
+.menuimg {
+    width: 200px;
+
+    /* height: 100px; */
+    z-index: 5;
+    border: solid white 5px;
+    border-radius: 4px;
+    /* background-color: red; */
+    /* height: fit-content */
+}
+
+.menuitemcont {
+    width: 250px;
+    height: 400px;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.menuName {
+    margin: 10px;
+    font-size: 25px;
+    color: #CCF381;
+
+}
+
+.menuDiscription {
+    margin: 0px;
+    text-align: center;
+    color: white;
+}

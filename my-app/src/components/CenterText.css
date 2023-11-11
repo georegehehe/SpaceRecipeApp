@@ -1,6 +1,6 @@
 .centertext {
     width: 900px;
-    height: 400px;
+    height: 350px;
     /* background-color: red; */
     margin-left: calc(50% - 450px);
     display: flex;
@@ -10,10 +10,12 @@
 }
 .centerP {
     text-align: center;
-    font-size: 30px;
+    font-size: 27px;
     color: white;
+    margin: 0px;
 }
 .centerH {
     margin: 20px;
+    margin-top: 0px;
     font-size: 50px;
 }

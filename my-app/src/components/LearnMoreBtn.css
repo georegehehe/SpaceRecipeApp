@@ -1,0 +1,17 @@
+.learnMore {
+        width: 90px;
+        height: 40px;
+        border: solid rgb(122, 114, 175) 3px;
+        font-size: 15px;
+        color: #4831D4;
+        background-color: #CCF381;
+        border-radius: 10px;
+        margin-top: 10px;
+    
+}
+
+.learnMore:hover {
+    border: solid #CCF381 3px;
+    background-color: #4831D4;
+    color: #CCF381;
+}
