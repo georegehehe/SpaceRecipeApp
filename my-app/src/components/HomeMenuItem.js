@@ -9,7 +9,7 @@ function HomeMenuItem(props) {
             </div>
             <h2 className="menuName">{props.menuName}</h2>
             <p className="menuDiscription">{props.menuDiscription}</p>
-            <LearnMoreBtn></LearnMoreBtn>
+            <LearnMoreBtn clickBehavior={props.clickAction}></LearnMoreBtn>
         </div>
     );
   }

@@ -1,7 +1,7 @@
 import "./LearnMoreBtn.css"
-function LearnMoreBtn() {
+function LearnMoreBtn(props) {
     return (
-        <button className="learnMore">Learn More</button>
+        <button onClick={props.clickBehavior} className="learnMore">Learn More</button>
     );
   }
   

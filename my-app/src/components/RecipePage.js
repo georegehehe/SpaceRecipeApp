@@ -1,8 +1,30 @@
 import React from 'react'
 
+/* pageData JSON object structure
+{
+    name: str,
+    description: str,
+    img: str??,
+    times: {
+        prep: int,
+        cook: int,
+    },
+    ingredientsList: {
+        hasMultipleSubFoods: bool,
+        subFoods: [
+            {
+                name: str,
+                ingredients: ["2 tbps butter", "1/2 cup milk", ...]
+            }
+        ]
+    },
+    directionsList: [strings],
+}
+*/
+
 export default function RecipePage(pageData) {
     return (
-        <>
+        <div id="recipe-page-container">
             <h1 id="name">{pageData.name}</h1>
             <p id="description">{pageData.description}</p>
             <img src={pageData.imgSrc} />
@@ -42,6 +64,6 @@ array of strings */}
             ))}
             <h2 id="nutrition-heading">Nutrition Facts <span id="per-serving">(per serving)</span></h2>
             
-        </>
+        </div>
     )
 }

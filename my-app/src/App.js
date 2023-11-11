@@ -14,6 +14,7 @@ import zerogzest from "./foodImages/zerogzest.png"
 function App() {
   const [message, setMessage] = useState('❌');
   const [loading, setLoading] = useState(true);
+  const [showingRecipe, setShowingRecipe] = useState(false);
 
   const handleClick = () => {
     //👇🏻 Send the SMS by calling the backend
@@ -26,6 +27,10 @@ function App() {
       });
 
   };
+
+  const onLearnMore = () => {
+    setShowingRecipe((prevState) => (!prevState));
+  }
 
   useEffect(() => {
     axios.get('http://127.0.0.1:5000/api')
@@ -48,15 +53,22 @@ function App() {
   return (
     <>
       <Header></Header>
-      <CenterText></CenterText>
-      <div className='menuContainer'>
-        <HomeMenuItem food={astrobites} menuName="astrobites" menuDiscription={astrobitesDiscript}></HomeMenuItem>
-        <HomeMenuItem food={galacticgrub} menuName="galacticgrub" menuDiscription={galacticgrubDiscript}></HomeMenuItem>
-        <HomeMenuItem food={cosmocrunch} menuName="cosmo crunch" menuDiscription={cosmoDiscript}></HomeMenuItem>
+      <div>
+      {!showingRecipe
+      ?
+      <>
+        <CenterText></CenterText>
+        <div className='menuContainer'>
+          <HomeMenuItem clickAction={onLearnMore} food={astrobites} menuName="astrobites" menuDiscription={astrobitesDiscript}></HomeMenuItem>
+          <HomeMenuItem clickAction={onLearnMore} food={galacticgrub} menuName="galacticgrub" menuDiscription={galacticgrubDiscript}></HomeMenuItem>
+          <HomeMenuItem clickAction={onLearnMore} food={cosmocrunch} menuName="cosmo crunch" menuDiscription={cosmoDiscript}></HomeMenuItem>
 
-        <HomeMenuItem food={orbitaloats} menuName="orbital oats" menuDiscription={orbitalDiscript}></HomeMenuItem>
-        <HomeMenuItem food={starsnacks} menuName="star snacks" menuDiscription={starDiscript}></HomeMenuItem>
-        <HomeMenuItem food={zerogzest} menuName="zero g zest" menuDiscription={zeroDiscript}></HomeMenuItem>
+          <HomeMenuItem clickAction={onLearnMore} food={orbitaloats} menuName="orbital oats" menuDiscription={orbitalDiscript}></HomeMenuItem>
+          <HomeMenuItem clickAction={onLearnMore} food={starsnacks} menuName="star snacks" menuDiscription={starDiscript}></HomeMenuItem>
+          <HomeMenuItem clickAction={onLearnMore} food={zerogzest} menuName="zero g zest" menuDiscription={zeroDiscript}></HomeMenuItem>
+        </div>
+      </>
+      : <div>test</div>}
       </div>
     </>
   );
