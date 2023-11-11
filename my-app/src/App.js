@@ -61,7 +61,10 @@ function App() {
     },
     "ingredientsList": [
       "1 butter",
-      "2 milk"
+      "2 milk",
+      "3 oats",
+      "4 space juice",
+      "5 computer parts"
     ],
     "directionsList": ["cook it"]
   }
