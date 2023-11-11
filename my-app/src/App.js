@@ -45,24 +45,29 @@ function App() {
       });
   }, []);
 
-  const temp = {
+  const astrobiteInfo = {
     "name": "astrobites",
     "description": "AstroBites: Nutritious and delicious, these compact, easy-to-handle snacks bring the comfort of earthy flavors to astronauts dining in the vastness of space.",
     "img": astrobites,
     "times": {
-        "prep": "1 hr",
-        "cook": "45 min"
+        "prep": "30 min",
+        "cook": "30min"
     },
-    "ingredientsList": {
-        "hasMultipleSubFoods": false,
-        "subFoods": [
-          {
-            name: "none",
-            ingredients: ["1 butter", "2 milk"]
-          }
-        ]
-    },
+    "ingredientsList": ["asdf"],
     "directionsList": ["cook it"]
+
+  }
+
+    const galacticgrubInfo = {
+      "name": "galacticgrub",
+      "description": "GalacticGrub is a compact, nutrient-rich meal designed for astronauts, offering a balanced blend of essential vitamins and minerals in a space-friendly form.",
+      "img": galacticgrub,
+      "times": {
+          "prep": "5 min",
+          "cook": "15 min"
+      },
+      "ingredientsList": ['asdf'],
+      "directionsList": ["cook it"]
 }
 
   const astrobitesDiscript = "AstroBites: Nutritious and delicious, these compact, easy-to-handle snacks bring the comfort of earthy flavors to astronauts dining in the vastness of space."
@@ -90,7 +95,7 @@ function App() {
         </div>
       </>
       : 
-        <RecipePage pageData={temp}></RecipePage>
+        <RecipePage pageData={astrobiteInfo}></RecipePage>
       }
       </div>
     </>
