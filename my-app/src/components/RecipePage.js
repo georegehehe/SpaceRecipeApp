@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
+import axios from 'axios';
 
 /* pageData JSON object structure
 {
@@ -23,6 +24,18 @@ import React from 'react'
 */
 
 export default function RecipePage(pageData) {
+    const [instruction, setInstruction] = useState("")
+
+    const handleIngredientRequest = () => {
+        axios.get("https://127.0.0.1:5000/api/getInstruction")
+        .then((response) => {
+            setInstruction(response.message)
+        })
+        .catch((error) => {
+            console.error(error);
+        })
+    }
+
     return (
         <div id="recipe-page-container">
             <h1 id="name">{pageData.name}</h1>
@@ -46,9 +59,11 @@ array of strings */}
             }
         ]
     } */}
-            
+            <div>
             <h2 id="nutrition-heading">Nutrition Facts <span id="per-serving">(per serving)</span></h2>
-            
+            <buttton onClick={handleIngredientRequest}>hheloo</buttton>
+            <h3>{instruction}</h3>
+            </div>
         </div>
     )
 }
