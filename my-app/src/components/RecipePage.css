@@ -29,8 +29,32 @@
 .ident {
     color: #CCF381;
     font-size: 25px;
+    margin: 4px;
 }
 
+.subfood-name{
+    color: #CCF381;
+    position: absolute;
+    left: 4px;
+}
+
+.ingred {
+    color: white;
+    margin: 0px;
+    /* position: absolute;
+    left: 0px; */
+}
+
+.icont {
+    width: 50%;
+    /* margin-left: 45%; */
+    /* background-color: red; */
+}
+
+.dcont {
+    width: 41%;
+    /* background-color: red; */
+}
 
 .generate {
     width: 350px;

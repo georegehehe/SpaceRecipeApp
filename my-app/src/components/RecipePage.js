@@ -42,8 +42,7 @@ export default function RecipePage(props) {
         <div id="recipe-page-container">
             <h1 id="name">{props.pageData["name"]}</h1>
             <p id="description">{props.pageData.description}</p>
-            <img src={props.pageData.imgSrc} />
-            <img src={astrobites} alt="food" className="recimg"/>
+            <img src={props.pageData.img} alt="food" className='recimg' />
             <div id="time-section">
                 <h4 className="time-category"><span className='ident'>Prep Time:</span> <span className="time-estimate"></span></h4>
                 <h4 className="time-category"><span className='ident'>Cook Time:</span> <span className="time-estimate"></span></h4>
@@ -61,17 +60,25 @@ array of strings */}
                 ingredients: ["2 tbps butter", "1/2 cup milk", ...]
             }
         ]
-    } */}
-            {props.pageData.ingredientsList.map((ingredientStr, i) => (
-                <ul key={"ingredient" + i} className="ingredient">{ingredientStr}</ul>
-            ))}
-            <h2 id="directions-heading">Directions</h2>
-            {props.pageData.directionsList.map((direction, i) => (
-                <React.Fragment key={"direction" + i}>
-                    <b>Step {i + 1}</b>
-                    <p>{direction}</p>
+    } */}   <div className='icont'>
+            {props.pageData.ingredientsList["subFoods"].map((subFood, i) => (
+                <React.Fragment key={"subfood" + i}>
+                    {props.pageData.ingredientsList.hasMultipleSubFoods && 
+                    <h3 className="subfood-name">{subFood.name}</h3>}
+                    {subFood.ingredients.map((ingredientStr, i) => (
+                        <ul key={"ingredient" + i} className="ingred">{ingredientStr}</ul>
+                    ))}
                 </React.Fragment>
             ))}
+            </div>
+            <h2 id="directions-heading" className='ident'>Directions</h2>
+            <div className='dcont'>
+            {props.pageData.directionsList.map((direction, i) => (
+                <React.Fragment key={"direction" + i}>
+                    <p className="ingred"> <b>Step {i + 1}: </b>{direction}</p>
+                </React.Fragment>
+            ))}
+            </div>
             <div>
             
             <h2 id="nutrition-heading" className='ident'>Nutrition Facts <span id="per-serving">(per serving)</span></h2>

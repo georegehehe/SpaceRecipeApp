@@ -90,7 +90,7 @@ function App() {
         <CenterText></CenterText>
         <div className='menuContainer'>
           <HomeMenuItem clickAction={() => onLearnMore(astrobitesInfo)} food={astrobites} menuName="astrobites" menuDiscription={astrobitesDiscript}></HomeMenuItem>
-          <HomeMenuItem clickAction={onLearnMore} food={galacticgrub} menuName="galacticgrub" menuDiscription={galacticgrubDiscript}></HomeMenuItem>
+          <HomeMenuItem clickAction={() => onLearnMore(galacticgrubInfo)} food={galacticgrub} menuName="galacticgrub" menuDiscription={galacticgrubDiscript}></HomeMenuItem>
           <HomeMenuItem clickAction={onLearnMore} food={cosmocrunch} menuName="cosmo crunch" menuDiscription={cosmoDiscript}></HomeMenuItem>
 
           <HomeMenuItem clickAction={onLearnMore} food={orbitaloats} menuName="orbital oats" menuDiscription={orbitalDiscript}></HomeMenuItem>
