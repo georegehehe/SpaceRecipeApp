@@ -42,8 +42,7 @@ export default function RecipePage(props) {
         <div id="recipe-page-container">
             <h1 id="name">{props.pageData["name"]}</h1>
             <p id="description">{props.pageData.description}</p>
-            <img src={props.pageData.imgSrc} />
-            <img src={astrobites} alt="food" className="recimg"/>
+            <img src={props.pageData.img} alt="food" className='recimg' />
             <div id="time-section">
                 <h4 className="time-category"><span className='ident'>Prep Time:</span> <span className="time-estimate"></span></h4>
                 <h4 className="time-category"><span className='ident'>Cook Time:</span> <span className="time-estimate"></span></h4>
