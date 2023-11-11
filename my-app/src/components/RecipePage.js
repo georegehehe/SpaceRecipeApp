@@ -1,4 +1,5 @@
 import React from 'react'
+import "./RecipePage.css"
 
 /* props.pageData JSON object structure
 {
@@ -7,7 +8,7 @@ import React from 'react'
     img: str??,
     times: {
         prep: int,
-        cook: int,
+        cook: int
     },
     ingredientsList: {
         hasMultipleSubFoods: bool,
@@ -18,7 +19,7 @@ import React from 'react'
             }
         ]
     },
-    directionsList: [strings],
+    directionsList: [strings]
 }
 */
 

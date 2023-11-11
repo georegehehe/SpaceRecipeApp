@@ -48,14 +48,19 @@ function App() {
   const temp = {
     "name": "astrobites",
     "description": "food",
-    "img": "src",
+    "img": astrobites,
     "times": {
         "prep": "1 hr",
         "cook": "45 min"
     },
     "ingredientsList": {
         "hasMultipleSubFoods": false,
-        "subFoods": []
+        "subFoods": [
+          {
+            name: "none",
+            ingredients: ["1 butter", "2 milk"]
+          }
+        ]
     },
     "directionsList": ["cook it"]
 }
