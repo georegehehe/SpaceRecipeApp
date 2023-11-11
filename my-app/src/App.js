@@ -16,6 +16,7 @@ function App() {
   const [message, setMessage] = useState('❌');
   const [loading, setLoading] = useState(true);
   const [showingRecipe, setShowingRecipe] = useState(false);
+  const [currentRecipe, setCurrentRecipe] = useState({});
 
   const handleClick = () => {
     //👇🏻 Send the SMS by calling the backend
@@ -29,7 +30,8 @@ function App() {
 
   };
 
-  const onLearnMore = () => {
+  const onLearnMore = (recipe) => {
+    setCurrentRecipe(recipe);
     setShowingRecipe((prevState) => (!prevState));
   }
 
@@ -45,25 +47,32 @@ function App() {
       });
   }, []);
 
-  const temp = {
+  const astrobitesInfo = {
     "name": "astrobites",
     "description": "AstroBites: Nutritious and delicious, these compact, easy-to-handle snacks bring the comfort of earthy flavors to astronauts dining in the vastness of space.",
     "img": astrobites,
     "times": {
-        "prep": "1 hr",
-        "cook": "45 min"
+        "prep": "30 min",
+        "cook": "30min"
     },
-    "ingredientsList": {
-        "hasMultipleSubFoods": false,
-        "subFoods": [
-          {
-            name: "none",
-            ingredients: ["1 butter", "2 milk"]
-          }
-        ]
-    },
+    "ingredientsList": [
+      "1 butter",
+      "2 milk"
+    ],
     "directionsList": ["cook it"]
-}
+  }
+
+  const galacticgrubInfo = {
+    "name": "galacticgrub",
+    "description": "GalacticGrub is a compact, nutrient-rich meal designed for astronauts, offering a balanced blend of essential vitamins and minerals in a space-friendly form.",
+    "img": galacticgrub,
+    "times": {
+        "prep": "5 min",
+        "cook": "15 min"
+    },
+    "ingredientsList": ['asdf'],
+    "directionsList": ["cook it"]
+  }
 
   const astrobitesDiscript = "AstroBites: Nutritious and delicious, these compact, easy-to-handle snacks bring the comfort of earthy flavors to astronauts dining in the vastness of space."
   const galacticgrubDiscript = "GalacticGrub is a compact, nutrient-rich meal designed for astronauts, offering a balanced blend of essential vitamins and minerals in a space-friendly form.";
@@ -80,8 +89,8 @@ function App() {
       <>
         <CenterText></CenterText>
         <div className='menuContainer'>
-          <HomeMenuItem clickAction={onLearnMore} food={astrobites} menuName="astrobites" menuDiscription={astrobitesDiscript}></HomeMenuItem>
-          <HomeMenuItem clickAction={onLearnMore} food={galacticgrub} menuName="galacticgrub" menuDiscription={galacticgrubDiscript}></HomeMenuItem>
+          <HomeMenuItem clickAction={() => onLearnMore(astrobitesInfo)} food={astrobites} menuName="astrobites" menuDiscription={astrobitesDiscript}></HomeMenuItem>
+          <HomeMenuItem clickAction={() => onLearnMore(galacticgrubInfo)} food={galacticgrub} menuName="galacticgrub" menuDiscription={galacticgrubDiscript}></HomeMenuItem>
           <HomeMenuItem clickAction={onLearnMore} food={cosmocrunch} menuName="cosmo crunch" menuDiscription={cosmoDiscript}></HomeMenuItem>
 
           <HomeMenuItem clickAction={onLearnMore} food={orbitaloats} menuName="orbital oats" menuDiscription={orbitalDiscript}></HomeMenuItem>
@@ -90,7 +99,7 @@ function App() {
         </div>
       </>
       : 
-        <RecipePage pageData={temp}></RecipePage>
+        <RecipePage pageData={currentRecipe}></RecipePage>
       }
       </div>
     </>
