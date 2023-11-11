@@ -71,7 +71,7 @@ array of strings */}
             <h2 id="directions-heading">Directions</h2>
             {props.pageData.directionsList.map((direction, i) => (
                 <React.Fragment key={"direction" + i}>
-                    <b>Step {i}</b>
+                    <b>Step {i + 1}</b>
                     <p>{direction}</p>
                 </React.Fragment>
             ))}
