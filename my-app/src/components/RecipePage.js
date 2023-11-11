@@ -29,7 +29,7 @@ export default function RecipePage(props) {
     const [instruction, setInstruction] = useState("")
 
     const handleIngredientRequest = () => {
-        axios.post("https://127.0.0.1:5000/api/getInstruction", {recipeName: props.pageData["name"], ingredients:props.pageData.ingredientsList})
+        axios.post("http://127.0.0.1:5000/api/getInstruction", {recipeName: props.pageData["name"], ingredients:props.pageData.ingredientsList})
         .then((response) => {
             setInstruction(response.message)
         })
