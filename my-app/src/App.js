@@ -1,7 +1,8 @@
-import headerImage from "./foodImages/homepagebanner.png"
 import './App.css';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Header from './components/Header'
+import CenterText from './components/CenterText';
 
 function App() {
   const [message, setMessage] = useState('❌');
@@ -9,7 +10,7 @@ function App() {
 
   const handleClick = () => {
     //👇🏻 Send the SMS by calling the backend
-      axios.post('http://127.0.0.1:5000/api/getInstruction', {recipeName: "Space Tartar", ingredients: ['1.5 lbs of beef', '1 lemon', '2 tortilla']})
+      axios.post('http://127.0.0.1:5000/api/getResponse', {recipeName: "Space Tartar", ingredients: ['1.5 lbs of beef', '1 lemon', '2 tortilla'], prompt: "what kind of milk should I use?"})
       .then((response) => {
         console.log(response);
       })
@@ -33,10 +34,10 @@ function App() {
 
   return (
     <>
-        <h1>hello world</h1>
-        <h3>Connected to Backend: {loading ? '🔄 ' : message}</h3>
-        <img src={headerImage} alt="food in space" className="headerImage"></img>
-        <button onClick={handleClick}>Click Me</button>
+      <Header></Header>
+      <CenterText></CenterText>
+      <h3>Connected to Backend: {loading ? '🔄 ' : message}</h3>
+      <button onClick={handleClick}>Click Me</button>
     </>
   );
 }
