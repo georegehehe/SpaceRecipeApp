@@ -40,6 +40,8 @@ export default function RecipePage(props) {
 
     return (
         <div id="recipe-page-container">
+            <br/>
+            <button className="headerBtn" onClick={props.onBack}>Back</button>
             <h1 id="name">{props.pageData["name"]}</h1>
             <p id="description">{props.pageData.description}</p>
             <img src={props.pageData.img} alt="food" className='recimg' />

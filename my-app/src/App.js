@@ -35,6 +35,10 @@ function App() {
     setShowingRecipe((prevState) => (!prevState));
   }
 
+  const toHomePage = () => {
+    setShowingRecipe(false);
+  }
+
   useEffect(() => {
     axios.get('http://127.0.0.1:5000/api')
       .then((response) => {
@@ -99,7 +103,7 @@ function App() {
         </div>
       </>
       : 
-        <RecipePage pageData={currentRecipe}></RecipePage>
+        <RecipePage pageData={currentRecipe} onBack={toHomePage}></RecipePage>
       }
       </div>
     </>
