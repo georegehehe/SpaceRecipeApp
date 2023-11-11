@@ -73,3 +73,9 @@ border: solid #CCF381 3px;
 background-color: #4831D4;
 color: #CCF381;
 }
+.generated {
+    font-size: 30px;
+    color: white;
+    width: 80%;
+    text-align: center;
+}

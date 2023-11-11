@@ -26,7 +26,7 @@ import "./RecipePage.css"
 */
 
 export default function RecipePage(props) {
-    const [instruction, setInstruction] = useState("")
+    const [instruction, setInstruction] = useState("Generate response to see instruction here. Loading time is ~20 seconds.")
 
     const handleIngredientRequest = () => {
         axios.post("https://127.0.0.1:5000/api/getInstruction", {recipeName: props.pageData["name"], ingredients:props.pageData.ingredientsList})
@@ -78,8 +78,9 @@ array of strings */}
             <h2 id="nutrition-heading" className='ident'>Nutrition Facts <span id="per-serving">(per serving)</span></h2>
             
             <button className="generate" onClick={handleIngredientRequest}>GENERATE RECIPE</button>
-            <h3>{instruction}</h3>
+            
             </div>
+            <h3 className='generated'>{instruction}</h3>
         </div>
     )
 }
