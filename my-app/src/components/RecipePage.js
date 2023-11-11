@@ -61,14 +61,8 @@ array of strings */}
             }
         ]
     } */}   <div className='icont'>
-            {props.pageData.ingredientsList["subFoods"].map((subFood, i) => (
-                <React.Fragment key={"subfood" + i}>
-                    {props.pageData.ingredientsList.hasMultipleSubFoods && 
-                    <h3 className="subfood-name">{subFood.name}</h3>}
-                    {subFood.ingredients.map((ingredientStr, i) => (
-                        <ul key={"ingredient" + i} className="ingred">{ingredientStr}</ul>
-                    ))}
-                </React.Fragment>
+            {props.pageData.ingredientsList.map((ingredientStr, i) => (
+                <ul key={"ingredient" + i} className="ingred">{ingredientStr}</ul>
             ))}
             </div>
             <h2 id="directions-heading" className='ident'>Directions</h2>
