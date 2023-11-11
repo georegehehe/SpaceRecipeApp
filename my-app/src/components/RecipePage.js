@@ -29,6 +29,7 @@ export default function RecipePage(props) {
     const [instruction, setInstruction] = useState("Generate response to see instruction here. Loading time is ~20 seconds.")
 
     const handleIngredientRequest = () => {
+        setInstruction("loading...")
         axios.post("http://127.0.0.1:5000/api/getInstruction", {recipeName: props.pageData["name"], ingredients:props.pageData.ingredientsList})
         .then((response) => {
             setInstruction(response.message)
