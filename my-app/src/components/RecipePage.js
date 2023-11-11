@@ -29,7 +29,7 @@ export default function RecipePage(props) {
     const [instruction, setInstruction] = useState("Generate response to see instruction here. Loading time is ~20 seconds.")
 
     const handleIngredientRequest = () => {
-        axios.post("https://127.0.0.1:5000/api/getInstruction", {recipeName: props.pageData["name"], ingredients:props.pageData.ingredientsList})
+        axios.post("http://127.0.0.1:5000/api/getInstruction", {recipeName: props.pageData["name"], ingredients:props.pageData.ingredientsList})
         .then((response) => {
             setInstruction(response.message)
         })
@@ -40,6 +40,8 @@ export default function RecipePage(props) {
 
     return (
         <div id="recipe-page-container">
+            <br/>
+            <button className="headerBtn" onClick={props.onBack}>Back</button>
             <h1 id="name">{props.pageData["name"]}</h1>
             <p id="description">{props.pageData.description}</p>
             <img src={props.pageData.img} alt="food" className='recimg' />
