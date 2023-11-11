@@ -16,6 +16,7 @@ function App() {
   const [message, setMessage] = useState('❌');
   const [loading, setLoading] = useState(true);
   const [showingRecipe, setShowingRecipe] = useState(false);
+  const [currentRecipe, setCurrentRecipe] = useState({});
 
   const handleClick = () => {
     //👇🏻 Send the SMS by calling the backend
@@ -29,7 +30,8 @@ function App() {
 
   };
 
-  const onLearnMore = () => {
+  const onLearnMore = (recipe) => {
+    setCurrentRecipe(recipe);
     setShowingRecipe((prevState) => (!prevState));
   }
 
@@ -45,7 +47,7 @@ function App() {
       });
   }, []);
 
-  const astrobiteInfo = {
+  const astrobitesInfo = {
     "name": "astrobites",
     "description": "AstroBites: Nutritious and delicious, these compact, easy-to-handle snacks bring the comfort of earthy flavors to astronauts dining in the vastness of space.",
     "img": astrobites,
@@ -53,22 +55,24 @@ function App() {
         "prep": "30 min",
         "cook": "30min"
     },
-    "ingredientsList": ["asdf"],
+    "ingredientsList": [
+      "1 butter",
+      "2 milk"
+    ],
     "directionsList": ["cook it"]
-
   }
 
-    const galacticgrubInfo = {
-      "name": "galacticgrub",
-      "description": "GalacticGrub is a compact, nutrient-rich meal designed for astronauts, offering a balanced blend of essential vitamins and minerals in a space-friendly form.",
-      "img": galacticgrub,
-      "times": {
-          "prep": "5 min",
-          "cook": "15 min"
-      },
-      "ingredientsList": ['asdf'],
-      "directionsList": ["cook it"]
-}
+  const galacticgrubInfo = {
+    "name": "galacticgrub",
+    "description": "GalacticGrub is a compact, nutrient-rich meal designed for astronauts, offering a balanced blend of essential vitamins and minerals in a space-friendly form.",
+    "img": galacticgrub,
+    "times": {
+        "prep": "5 min",
+        "cook": "15 min"
+    },
+    "ingredientsList": ['asdf'],
+    "directionsList": ["cook it"]
+  }
 
   const astrobitesDiscript = "AstroBites: Nutritious and delicious, these compact, easy-to-handle snacks bring the comfort of earthy flavors to astronauts dining in the vastness of space."
   const galacticgrubDiscript = "GalacticGrub is a compact, nutrient-rich meal designed for astronauts, offering a balanced blend of essential vitamins and minerals in a space-friendly form.";
@@ -85,7 +89,7 @@ function App() {
       <>
         <CenterText></CenterText>
         <div className='menuContainer'>
-          <HomeMenuItem clickAction={onLearnMore} food={astrobites} menuName="astrobites" menuDiscription={astrobitesDiscript}></HomeMenuItem>
+          <HomeMenuItem clickAction={() => onLearnMore(astrobitesInfo)} food={astrobites} menuName="astrobites" menuDiscription={astrobitesDiscript}></HomeMenuItem>
           <HomeMenuItem clickAction={onLearnMore} food={galacticgrub} menuName="galacticgrub" menuDiscription={galacticgrubDiscript}></HomeMenuItem>
           <HomeMenuItem clickAction={onLearnMore} food={cosmocrunch} menuName="cosmo crunch" menuDiscription={cosmoDiscript}></HomeMenuItem>
 
@@ -95,7 +99,7 @@ function App() {
         </div>
       </>
       : 
-        <RecipePage pageData={astrobiteInfo}></RecipePage>
+        <RecipePage pageData={currentRecipe}></RecipePage>
       }
       </div>
     </>
