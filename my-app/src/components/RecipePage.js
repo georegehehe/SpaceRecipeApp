@@ -23,11 +23,11 @@ import axios from 'axios';
 }
 */
 
-export default function RecipePage(pageData) {
+export default function RecipePage(props) {
     const [instruction, setInstruction] = useState("")
 
     const handleIngredientRequest = () => {
-        axios.get("https://127.0.0.1:5000/api/getInstruction")
+        axios.post("https://127.0.0.1:5000/api/getInstruction", {recipeName: props.pageData["name"], ingredients:props.pageData.ingredientsList})
         .then((response) => {
             setInstruction(response.message)
         })
@@ -61,7 +61,7 @@ array of strings */}
     } */}
             <div>
             <h2 id="nutrition-heading">Nutrition Facts <span id="per-serving">(per serving)</span></h2>
-            <buttton onClick={handleIngredientRequest}>hheloo</buttton>
+            <button onClick={handleIngredientRequest}>hheloo</button>
             <h3>{instruction}</h3>
             </div>
         </div>
