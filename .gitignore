@@ -25,3 +25,5 @@ yarn-error.log*
 #backend venv
 /backend/venv/
 /backend/env/
+
+/backend/__pycache__/
