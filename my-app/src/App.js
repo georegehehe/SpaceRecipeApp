@@ -12,6 +12,18 @@ function App() {
   const [message, setMessage] = useState('❌');
   const [loading, setLoading] = useState(true);
 
+  const handleClick = () => {
+    //👇🏻 Send the SMS by calling the backend
+      axios.post('http://127.0.0.1:5000/api/getResponse', {recipeName: "Space Tartar", ingredients: ['1.5 lbs of beef', '1 lemon', '2 tortilla'], prompt: "what kind of milk should I use?"})
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+
+  };
+
   useEffect(() => {
     axios.get('http://127.0.0.1:5000/api')
       .then((response) => {
