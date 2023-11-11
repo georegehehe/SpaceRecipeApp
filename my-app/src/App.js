@@ -10,6 +10,7 @@ import cosmocrunch from "./foodImages/cosmocrunch.png";
 import orbitaloats from "./foodImages/orbitaloats.png";
 import starsnacks from "./foodImages/starsnacks.png"
 import zerogzest from "./foodImages/zerogzest.png"
+import RecipePage from './components/RecipePage';
 
 function App() {
   const [message, setMessage] = useState('❌');
@@ -44,6 +45,21 @@ function App() {
       });
   }, []);
 
+  const temp = {
+    "name": "astrobites",
+    "description": "food",
+    "img": "src",
+    "times": {
+        "prep": "1 hr",
+        "cook": "45 min"
+    },
+    "ingredientsList": {
+        "hasMultipleSubFoods": false,
+        "subFoods": []
+    },
+    "directionsList": ["cook it"]
+}
+
   const astrobitesDiscript = "AstroBites: Nutritious and delicious, these compact, easy-to-handle snacks bring the comfort of earthy flavors to astronauts dining in the vastness of space."
   const galacticgrubDiscript = "GalacticGrub is a compact, nutrient-rich meal designed for astronauts, offering a balanced blend of essential vitamins and minerals in a space-friendly form.";
   const cosmoDiscript = "Cosmo Crunch is an energy-packed snack for astronauts, featuring a crunchy texture and a mix of savory and sweet flavors, tailored for consumption in zero-gravity environments.";
@@ -68,7 +84,7 @@ function App() {
           <HomeMenuItem clickAction={onLearnMore} food={zerogzest} menuName="zero g zest" menuDiscription={zeroDiscript}></HomeMenuItem>
         </div>
       </>
-      : <div>test</div>}
+      : <RecipePage pageData={temp}></RecipePage>}
       </div>
     </>
   );

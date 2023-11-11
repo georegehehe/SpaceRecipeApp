@@ -46,22 +46,7 @@ array of strings */}
             }
         ]
     } */}
-            {pageData.ingredientsList.subFoods.map((subFood, i) => (
-                <React.Fragment key={"subfood" + i}>
-                    {pageData.ingredientsList.hasMultipleSubFoods && 
-                    <h3 className="subfood-name">{subFood.name}</h3>}
-                    {subFood.ingredients.map((ingredientStr, i) => (
-                        <ul key={"ingredient" + i} className="ingredient">{ingredientStr}</ul>
-                    ))}
-                </React.Fragment>
-            ))}
-            <h2 id="directions-heading">Directions</h2>
-            {pageData.directionsList.map((direction, i) => (
-                <React.Fragment key={"direction" + i}>
-                    <b>Step {i}</b>
-                    <p>{direction}</p>
-                </React.Fragment>
-            ))}
+            
             <h2 id="nutrition-heading">Nutrition Facts <span id="per-serving">(per serving)</span></h2>
             
         </div>

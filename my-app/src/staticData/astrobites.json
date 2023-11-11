@@ -1,0 +1,14 @@
+{
+    "name": "astrobites",
+    "description": "food",
+    "img": "src",
+    "times": {
+        "prep": "1 hr",
+        "cook": "45 min"
+    },
+    "ingredientsList": {
+        "hasMultipleSubFoods": false,
+        "subFoods": []
+    },
+    "directionsList": ["cook it"]
+}
