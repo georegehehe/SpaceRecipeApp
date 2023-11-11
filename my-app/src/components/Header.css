@@ -11,7 +11,7 @@ header {
     align-items: center;
     /* padding: 10px; */
     border-bottom: 5px #CCF381 solid;
-    position: absolute;
+    position: relative;
 }
 
 .dropdown {

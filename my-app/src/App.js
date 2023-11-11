@@ -2,6 +2,7 @@ import './App.css';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Header from './components/Header'
+import CenterText from './components/CenterText';
 
 function App() {
   const [message, setMessage] = useState('❌');
@@ -22,6 +23,7 @@ function App() {
   return (
     <>
       <Header></Header>
+      <CenterText></CenterText>
     </>
   );
 }
