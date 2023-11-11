@@ -7,6 +7,9 @@ import HomeMenuItem from './components/HomeMenuItem';
 import astrobites from "./foodImages/astrobites.png";
 import galacticgrub from "./foodImages/galacticgrub.png";
 import cosmocrunch from "./foodImages/cosmocrunch.png";
+import orbitaloats from "./foodImages/orbitaloats.png";
+import starsnacks from "./foodImages/starsnacks.png"
+import zerogzest from "./foodImages/zerogzest.png"
 
 function App() {
   const [message, setMessage] = useState('❌');
@@ -37,18 +40,23 @@ function App() {
   }, []);
 
   const astrobitesDiscript = "AstroBites: Nutritious and delicious, these compact, easy-to-handle snacks bring the comfort of earthy flavors to astronauts dining in the vastness of space."
+  const galacticgrubDiscript = "GalacticGrub is a compact, nutrient-rich meal designed for astronauts, offering a balanced blend of essential vitamins and minerals in a space-friendly form.";
+  const cosmoDiscript = "Cosmo Crunch is an energy-packed snack for astronauts, featuring a crunchy texture and a mix of savory and sweet flavors, tailored for consumption in zero-gravity environments.";
+  const orbitalDiscript = "OrbitalOats are a quick-cooking, hearty oatmeal blend fortified with nutrients and designed to provide sustained energy for astronauts during long missions in space.";
+  const starDiscript = "Star Snacks are a variety of bite-sized, nutritious treats for astronauts, crafted to maintain freshness and provide a burst of flavor during space expeditions.";
+  const zeroDiscript = "Zero G Zest is a specially formulated, tangy and refreshing meal option for astronauts, engineered to stay flavorful and satisfying in the weightlessness of space.";
   return (
     <>
       <Header></Header>
       <CenterText></CenterText>
       <div className='menuContainer'>
         <HomeMenuItem food={astrobites} menuName="astrobites" menuDiscription={astrobitesDiscript}></HomeMenuItem>
-        <HomeMenuItem food={galacticgrub} menuName="galacticgrub" menuDiscription={astrobitesDiscript}></HomeMenuItem>
-        <HomeMenuItem food={cosmocrunch} menuName="galacticgrub" menuDiscription={astrobitesDiscript}></HomeMenuItem>
+        <HomeMenuItem food={galacticgrub} menuName="galacticgrub" menuDiscription={galacticgrubDiscript}></HomeMenuItem>
+        <HomeMenuItem food={cosmocrunch} menuName="cosmo crunch" menuDiscription={cosmoDiscript}></HomeMenuItem>
 
-        <HomeMenuItem food={astrobites} menuName="astrobites" menuDiscription={astrobitesDiscript}></HomeMenuItem>
-        <HomeMenuItem food={galacticgrub} menuName="galacticgrub" menuDiscription={astrobitesDiscript}></HomeMenuItem>
-        <HomeMenuItem food={cosmocrunch} menuName="galacticgrub" menuDiscription={astrobitesDiscript}></HomeMenuItem>
+        <HomeMenuItem food={orbitaloats} menuName="orbital oats" menuDiscription={orbitalDiscript}></HomeMenuItem>
+        <HomeMenuItem food={starsnacks} menuName="star snacks" menuDiscription={starDiscript}></HomeMenuItem>
+        <HomeMenuItem food={zerogzest} menuName="zero g zest" menuDiscription={zeroDiscript}></HomeMenuItem>
       </div>
     </>
   );

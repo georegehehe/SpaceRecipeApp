@@ -1,9 +1,9 @@
 import './Header.css'
 
-function HeaderBtn() {
+function HeaderBtn(props) {
     return (
       <button className="headerBtn">
-        click here
+        {props.text}
       </button>
     );
   }
