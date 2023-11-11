@@ -35,6 +35,11 @@ function App() {
     setShowingRecipe((prevState) => (!prevState));
   }
 
+  const goToRecipe = (recipe) => {
+    setCurrentRecipe(recipe);
+    setShowingRecipe(true);
+  }
+
   const toHomePage = () => {
     setShowingRecipe(false);
   }
@@ -132,6 +137,15 @@ function App() {
     "directionsList": ["cook it"]
   }
 
+  const objOfRecipes = {
+    "astrobites":astrobitesInfo,
+    "galacticgrub":galacticgrubInfo,
+    "cosmocrunch":cosmocrunchInfo,
+    "orbitaloats":orbitaloatsInfo,
+    "starsnacks":starsnacksInfo,
+    "zerogzest":zerogzestInfo,
+  }
+
   const astrobitesDiscript = "AstroBites: Nutritious and delicious, these compact, easy-to-handle snacks bring the comfort of earthy flavors to astronauts dining in the vastness of space."
   const galacticgrubDiscript = "GalacticGrub is a compact, nutrient-rich meal designed for astronauts, offering a balanced blend of essential vitamins and minerals in a space-friendly form.";
   const cosmoDiscript = "Cosmo Crunch is an energy-packed snack for astronauts, featuring a crunchy texture and a mix of savory and sweet flavors, tailored for consumption in zero-gravity environments.";
@@ -140,7 +154,7 @@ function App() {
   const zeroDiscript = "Zero G Zest is a specially formulated, tangy and refreshing meal option for astronauts, engineered to stay flavorful and satisfying in the weightlessness of space.";
   return (
     <>
-      <Header></Header>
+      <Header recipes={objOfRecipes} goToPage={(recipe) => goToRecipe(recipe)}></Header>
       <div>
       {!showingRecipe
       ?
