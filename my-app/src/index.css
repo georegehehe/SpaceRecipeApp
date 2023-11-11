@@ -1,1 +1,6 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&family=VT323&display=swap');
+* {font-family: 'VT323', monospace;}
+body {
+    margin: 0px;
+    padding: 0px;
+}

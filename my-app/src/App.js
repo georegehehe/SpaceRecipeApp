@@ -1,3 +1,4 @@
+import headerImage from "./foodImages/homepagebanner.png"
 import './App.css';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
@@ -19,10 +20,10 @@ function App() {
   }, []);
 
   return (
-    <div>
-      <h3>Connected to Backend: {loading ? '🔄 ' : message}</h3>
-      <>hello world</>
-    </div>
+    <>
+        <h1>hello world</h1>
+        <img src={headerImage} alt="food in space" className="headerImage"></img>
+    </>
   );
 }
 
