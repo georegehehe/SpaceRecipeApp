@@ -49,7 +49,7 @@ function App() {
 
   const astrobitesInfo = {
     "name": "astrobites",
-    "description": "food",
+    "description": "AstroBites: Nutritious and delicious, these compact, easy-to-handle snacks bring the comfort of earthy flavors to astronauts dining in the vastness of space.",
     "img": astrobites,
     "times": {
         "prep": "1 hr",
