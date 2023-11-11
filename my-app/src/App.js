@@ -77,7 +77,12 @@ function App() {
         "prep": "5 min",
         "cook": "15 min"
     },
-    "ingredientsList": ['asdf'],
+    "ingredientsList": [
+        '1 star powder',
+        '2 vegan milk',
+        '3 water',
+        '4 stawberries'
+    ],
     "directionsList": ["cook it"]
   }
 
@@ -91,7 +96,10 @@ function App() {
     },
     "ingredientsList": [
       "1 butter",
-      "2 milk"
+      "2 milk",
+      "3 sugar",
+      "4 space sugar",
+      "5 coffe"
     ],
     "directionsList": ["cook it"]
   }
@@ -104,7 +112,13 @@ function App() {
         "prep": "5 min",
         "cook": "15 min"
     },
-    "ingredientsList": ['asdf'],
+    "ingredientsList": [
+        '1 love',
+        '2 lettuce',
+        '3 sunlight',
+        '4 water',
+        '5 grapes'
+    ],
     "directionsList": ["cook it"]
   }
 
@@ -117,8 +131,12 @@ function App() {
         "cook": "30min"
     },
     "ingredientsList": [
-      "1 butter",
-      "2 milk"
+      "1 apple juice",
+      "2 star light",
+      "3 bread crumbs",
+      "4 pineapple",
+      "5 water",
+      "6 flour"
     ],
     "directionsList": ["cook it"]
   }
@@ -131,7 +149,14 @@ function App() {
         "prep": "5 min",
         "cook": "15 min"
     },
-    "ingredientsList": ['asdf'],
+    "ingredientsList": [
+        '1 gravity',
+        '2 edible rocket fuel',
+        '3 brown sugar',
+        '4 chocolate chips',
+        '5 baking soda',
+        '6 root beer'
+    ],
     "directionsList": ["cook it"]
   }
 
