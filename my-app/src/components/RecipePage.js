@@ -61,23 +61,25 @@ array of strings */}
                 ingredients: ["2 tbps butter", "1/2 cup milk", ...]
             }
         ]
-    } */}
+    } */}   <div className='icont'>
             {props.pageData.ingredientsList["subFoods"].map((subFood, i) => (
                 <React.Fragment key={"subfood" + i}>
                     {props.pageData.ingredientsList.hasMultipleSubFoods && 
                     <h3 className="subfood-name">{subFood.name}</h3>}
                     {subFood.ingredients.map((ingredientStr, i) => (
-                        <ul key={"ingredient" + i} className="ingredient">{ingredientStr}</ul>
+                        <ul key={"ingredient" + i} className="ingred">{ingredientStr}</ul>
                     ))}
                 </React.Fragment>
             ))}
-            <h2 id="directions-heading">Directions</h2>
+            </div>
+            <h2 id="directions-heading" className='ident'>Directions</h2>
+            <div className='dcont'>
             {props.pageData.directionsList.map((direction, i) => (
                 <React.Fragment key={"direction" + i}>
-                    <b>Step {i + 1}</b>
-                    <p>{direction}</p>
+                    <p className="ingred"> <b>Step {i + 1}: </b>{direction}</p>
                 </React.Fragment>
             ))}
+            </div>
             <div>
             
             <h2 id="nutrition-heading" className='ident'>Nutrition Facts <span id="per-serving">(per serving)</span></h2>
