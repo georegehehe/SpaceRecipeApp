@@ -1,3 +1,51 @@
 #recipe-page-container {
     margin: auto;
+    width: 60%;
+    margin-left: 20%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#name {
+    margin: 0px;
+    margin-top: 20px;
+    font-size: 80px;
+}
+
+#description {
+    color: white;
+    font-size: 28px;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.recimg {
+    width: 400px;
+    border: 7px solid white;
+    border-radius: 15px;
+}
+
+.ident {
+    color: #CCF381;
+    font-size: 25px;
+}
+
+
+.generate {
+    width: 350px;
+    height: 100px;
+    border: solid rgb(122, 114, 175) 3px;
+    font-size: 50px;
+    color: #4831D4;
+    background-color: #CCF381;
+    border-radius: 10px;
+    margin-top: 10px;
+
+}
+
+.generate:hover {
+border: solid #CCF381 3px;
+background-color: #4831D4;
+color: #CCF381;
 }
