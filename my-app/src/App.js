@@ -89,7 +89,9 @@ function App() {
           <HomeMenuItem clickAction={onLearnMore} food={zerogzest} menuName="zero g zest" menuDiscription={zeroDiscript}></HomeMenuItem>
         </div>
       </>
-      : <RecipePage pageData={temp}></RecipePage>}
+      : 
+        <RecipePage pageData={temp}></RecipePage>
+      }
       </div>
     </>
   );

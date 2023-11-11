@@ -1,5 +1,5 @@
-import React from 'react'
-import "./RecipePage.css"
+import React, { useState } from 'react'
+import axios from 'axios';
 
 /* props.pageData JSON object structure
 {
@@ -24,6 +24,18 @@ import "./RecipePage.css"
 */
 
 export default function RecipePage(props) {
+    const [instruction, setInstruction] = useState("")
+
+    const handleIngredientRequest = () => {
+        axios.get("https://127.0.0.1:5000/api/getInstruction")
+        .then((response) => {
+            setInstruction(response.message)
+        })
+        .catch((error) => {
+            console.error(error);
+        })
+    }
+
     return (
         <div id="recipe-page-container">
             <h1 id="name">{props.pageData["name"]}</h1>
@@ -47,24 +59,11 @@ array of strings */}
             }
         ]
     } */}
-            {props.pageData.ingredientsList["subFoods"].map((subFood, i) => (
-                <React.Fragment key={"subfood" + i}>
-                    {props.pageData.ingredientsList.hasMultipleSubFoods && 
-                    <h3 className="subfood-name">{subFood.name}</h3>}
-                    {subFood.ingredients.map((ingredientStr, i) => (
-                        <ul key={"ingredient" + i} className="ingredient">{ingredientStr}</ul>
-                    ))}
-                </React.Fragment>
-            ))}
-            <h2 id="directions-heading">Directions</h2>
-            {props.pageData.directionsList.map((direction, i) => (
-                <React.Fragment key={"direction" + i}>
-                    <b>Step {i}</b>
-                    <p>{direction}</p>
-                </React.Fragment>
-            ))}
+            <div>
             <h2 id="nutrition-heading">Nutrition Facts <span id="per-serving">(per serving)</span></h2>
-            
+            <buttton onClick={handleIngredientRequest}>hheloo</buttton>
+            <h3>{instruction}</h3>
+            </div>
         </div>
     )
 }
